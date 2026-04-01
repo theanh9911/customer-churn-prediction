@@ -145,10 +145,3 @@ Score a new dataset with the saved model:
 ```bash
 python -m src.predict --input data/customer_churn_dataset-testing-master.csv --output artifacts/reports/scored_test.csv
 ```
-
-## CV-Ready Resume Bullets
-
-- Built an end-to-end churn prediction pipeline on `440K+` training records, framing churn as a retention optimization problem and tuning decision thresholds using business cost tradeoffs rather than default classification rules.
-- Compared `Logistic Regression`, `Random Forest`, and `XGBoost` with `GridSearchCV` and stratified cross-validation, selecting the final model based on Precision-Recall performance instead of accuracy alone.
-- Applied SHAP explanations to translate churn drivers such as monthly contracts, payment delays, and support-call volume into actionable retention recommendations for stakeholders.
-- Documented methodology, assumptions, threshold logic, and model limitations to ensure reproducibility and transparent communication.
