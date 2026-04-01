@@ -1,0 +1,58 @@
+{
+  "selected_model": "logistic_regression",
+  "top_features": [
+    {
+      "feature": "cat__Contract Length_Monthly",
+      "mean_abs_shap": 5.8622195681257985
+    },
+    {
+      "feature": "num__Support Calls",
+      "mean_abs_shap": 2.0584447176375797
+    },
+    {
+      "feature": "num__Total Spend",
+      "mean_abs_shap": 1.4190147308466066
+    },
+    {
+      "feature": "num__Payment Delay",
+      "mean_abs_shap": 0.8517972880626258
+    },
+    {
+      "feature": "cat__Gender_Female",
+      "mean_abs_shap": 0.47264297398609667
+    },
+    {
+      "feature": "num__Last Interaction",
+      "mean_abs_shap": 0.45183043374896187
+    },
+    {
+      "feature": "num__Age",
+      "mean_abs_shap": 0.42875664217620746
+    },
+    {
+      "feature": "num__Usage Frequency",
+      "mean_abs_shap": 0.12213472562809441
+    },
+    {
+      "feature": "cat__Gender_Male",
+      "mean_abs_shap": 0.11088268333517051
+    },
+    {
+      "feature": "num__Tenure",
+      "mean_abs_shap": 0.10404525069045928
+    },
+    {
+      "feature": "cat__Subscription Type_Standard",
+      "mean_abs_shap": 0.05333396642431644
+    },
+    {
+      "feature": "cat__Subscription Type_Premium",
+      "mean_abs_shap": 0.03981922494994758
+    }
+  ],
+  "business_recommendations": [
+    "Prioritize proactive payment reminders or billing support for customers with frequent payment delays.",
+    "Escalate service recovery flows when support-call volume spikes, because repeated issues are linked to churn.",
+    "Trigger retention journeys for customers whose product usage drops below their historical norm."
+  ]
+}

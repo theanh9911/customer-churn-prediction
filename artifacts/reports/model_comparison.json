@@ -1,0 +1,127 @@
+{
+  "business_context": {
+    "target_definition": "Churn = 1 means a customer is likely to leave, so the retention team should intervene.",
+    "positive_class": "customer churns",
+    "negative_class": "customer stays",
+    "leakage_risk": [
+      "CustomerID"
+    ],
+    "model_selection_metric": "average_precision",
+    "cost_assumptions": {
+      "false_negative_cost": 8.0,
+      "false_positive_cost": 1.0,
+      "business_reasoning": "Missing a true churner is assumed to cost around 8x more than contacting a customer who would have stayed."
+    },
+    "distribution_shift": {
+      "train_churn_rate": 0.5671,
+      "test_churn_rate": 0.4737,
+      "absolute_gap": 0.0934
+    },
+    "limitations": [
+      "The dataset appears synthetic or curated, so real-world behavior may be noisier.",
+      "Train and test sets show different churn rates, indicating potential distribution shift.",
+      "No campaign outcome data is available, so threshold tuning is based on assumed business costs."
+    ]
+  },
+  "data_profile": {
+    "train_rows": 440832,
+    "sampled_train_rows": 119999,
+    "test_rows": 64374
+  },
+  "model_results": {
+    "logistic_regression": {
+      "average_precision": 0.634902925255725,
+      "roc_auc": 0.6837405400024974,
+      "precision": 0.5252925730780601,
+      "recall": 0.9906535926278163,
+      "f1_score": 0.6865454545454546,
+      "confusion_matrix": {
+        "tn": 6582,
+        "fp": 27299,
+        "fn": 285,
+        "tp": 30208
+      },
+      "threshold_analysis": {
+        "threshold": 0.43894472361809045,
+        "cost": 29579.0,
+        "precision": 0.5252925730780601,
+        "recall": 0.9906535926278163,
+        "f1": 0.6865454545454546,
+        "tn": 6582,
+        "fp": 27299,
+        "fn": 285,
+        "tp": 30208
+      },
+      "best_params": {
+        "model__C": 5.0,
+        "model__penalty": "l1"
+      },
+      "cv_best_score": 0.9745142537464029
+    },
+    "random_forest": {
+      "average_precision": 0.5650907367388052,
+      "roc_auc": 0.6484771152960175,
+      "precision": 0.49318443360293046,
+      "recall": 0.9978683632309054,
+      "f1_score": 0.6601149799327476,
+      "confusion_matrix": {
+        "tn": 2612,
+        "fp": 31269,
+        "fn": 65,
+        "tp": 30428
+      },
+      "threshold_analysis": {
+        "threshold": 0.827889447236181,
+        "cost": 31789.0,
+        "precision": 0.49318443360293046,
+        "recall": 0.9978683632309054,
+        "f1": 0.6601149799327476,
+        "tn": 2612,
+        "fp": 31269,
+        "fn": 65,
+        "tp": 30428
+      },
+      "best_params": {
+        "model__max_depth": null,
+        "model__min_samples_leaf": 1
+      },
+      "cv_best_score": 0.9999953645187339
+    },
+    "xgboost": {
+      "average_precision": 0.6325806837063812,
+      "roc_auc": 0.7132109389601893,
+      "precision": 0.48818569459138855,
+      "recall": 0.9987210179385433,
+      "f1_score": 0.6558061911170928,
+      "confusion_matrix": {
+        "tn": 1953,
+        "fp": 31928,
+        "fn": 39,
+        "tp": 30454
+      },
+      "threshold_analysis": {
+        "threshold": 0.1902010050251256,
+        "cost": 32240.0,
+        "precision": 0.48818569459138855,
+        "recall": 0.9987210179385433,
+        "f1": 0.6558061911170928,
+        "tn": 1953,
+        "fp": 31928,
+        "fn": 39,
+        "tp": 30454
+      },
+      "best_params": {
+        "model__learning_rate": 0.1,
+        "model__max_depth": 6,
+        "model__min_child_weight": 1
+      },
+      "cv_best_score": 0.9999996367291185
+    }
+  },
+  "selected_model": {
+    "model_name": "logistic_regression",
+    "selection_reason": "Highest average precision on the holdout test set.",
+    "average_precision": 0.634902925255725,
+    "threshold": 0.43894472361809045
+  }
+}

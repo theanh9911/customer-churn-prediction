@@ -1,0 +1,16 @@
+feature,mean_abs_shap
+cat__Contract Length_Monthly,5.8622195681257985
+num__Support Calls,2.0584447176375797
+num__Total Spend,1.4190147308466066
+num__Payment Delay,0.8517972880626258
+cat__Gender_Female,0.47264297398609667
+num__Last Interaction,0.45183043374896187
+num__Age,0.42875664217620746
+num__Usage Frequency,0.12213472562809441
+cat__Gender_Male,0.11088268333517051
+num__Tenure,0.10404525069045928
+cat__Subscription Type_Standard,0.05333396642431644
+cat__Subscription Type_Premium,0.03981922494994758
+cat__Contract Length_Annual,0.02977306668012439
+cat__Contract Length_Quarterly,0.028623958734091966
+cat__Subscription Type_Basic,0.000691253836356299
